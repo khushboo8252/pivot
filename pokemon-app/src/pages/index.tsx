@@ -5,9 +5,11 @@ import Footer from '@/components/Footer';
 const Home: React.FC = () => {
   return (
     <div>
-    <h1 className="font-bold text-4xl text-blue-500 text-center mt-2">Welcome to the Pokemon Pokedex!</h1> 
-    <PokedexGrid />
-    <Footer />
+      <h1 className="font-bold text-4xl text-blue-500 text-center mt-2">
+        Welcome to the Pokemon Pokedex!
+      </h1>
+      <PokedexGrid />
+      <Footer />
     </div>
   );
 };

@@ -5,10 +5,7 @@ import React from 'react';
 import { usePokemon } from '../context/PokemonContext';
 import PokemonCard from './PokemonCard';
 import PokemonTypeFilter from './PokemonTypeFilter';
-
-interface PokedexGridProps {
-  pokemons: any[]; // Define appropriate type for pokemons
-}
+import { Pokemon } from '../types/pokemon'; // Import the Pokemon type
 
 const PokedexGrid: React.FC = () => {
   const { filteredList, loading, availableTypes, selectedTypes, setSelectedTypes } = usePokemon();
@@ -25,7 +22,7 @@ const PokedexGrid: React.FC = () => {
         onTypeSelect={setSelectedTypes}
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {filteredList.map((pokemon) => (
+        {filteredList.map((pokemon: Pokemon) => (
           <PokemonCard key={pokemon.id} {...pokemon} />
         ))}
       </div>
